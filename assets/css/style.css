@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(46, 47, 49);
+}
+
+.caja_madre {
+    height: 361px;
+    border: 0.3rem solid rgb(196, 53, 177);
+    border-radius: 50vh;
+    padding: 2px;
+}
+
+.reloj {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/relojBack.png);
+    background-size: cover;
+    border: 0.1rem solid rgb(196, 53, 177);
+    border-radius: 50vh;
+    /* El primer parwametro es en el eje X, el segundo parametro es en el eje Y, el tercer parametro me difunina la  sombra y el cuarto parametro es completo */
+    box-shadow: inset 0px 0px 40px 5px rgb(173, 34, 155);
+}
+
+/* Before me sirve para dibujar elementos en el interior */
+.reloj::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(173, 34, 155);
+    border-radius: 50vh;
+    z-index: 100;
+}
+
+.hora {
+    width: 130px;
+    height: 130px;
+}
+
+.hora::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 85px;
+    background: rgb(163, 163, 163);
+    z-index: 10;
+    border-radius: 50vh;
+}
+
+.minuto {
+    width: 220px;
+    height: 220px;
+}
+
+.minuto::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 130px;
+    background: rgb(150, 15, 143);
+    z-index: 11;
+    border-radius: 50vh;
+}
+
+.segundo {
+    width: 250px;
+    height: 250px;
+}
+
+.segundo::before {
+    content: '';
+    position: absolute;
+    width: 1.5px;
+    height: 140px;
+    background: rgb(34, 204, 181);
+    z-index: 12;
+    border-radius: 50vh;
+}
+
+.hora, .minuto, .segundo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50vh;
+}
+
+.reloj_digital {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 16vh;
+    top: -21vh;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-family: monospace;
+    font-size: 2rem;
+    color:rgb(196, 53, 177);
+}
